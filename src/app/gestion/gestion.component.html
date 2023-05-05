@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    
+    <title>Visualización de Datos</title>
+  
+  </head>
+  <body>
+    
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">MiningML</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="admin">Admin</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reporte">Reporte</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  
+</nav>
+
+<div class="container text-center">
+  <form (ngSubmit)="predecir()">
+  <div class="form-group ">
+  <div class="form-group row">
+    <label for="Id" class="col-md-3 col-form-label text-md-right">Bosque aleatorio</label>
+    <div class="col-md-9">
+      <input type="text" class="form-control"  [(ngModel)]="mensaje" id="mensaje" name="mensaje"placeholder="Digite los datos..." />
+    </div>
+
+  </div>
+  </div>
+
+
+<button type="submit" class="btn btn-primary mx-auto mt-3 ml-5">Predeccir</button>
+  </form>
+
+</div>
+    <h1>Visualización de Datos</h1>
+    <h3>winequality-red </h3>
+    
+    <table>
+      <thead>
+        <tr>
+         
+          <th>fixed acidity</th>
+          <th>volatile acidity</th>
+          <th>citric acid</th>
+          <th>residual sugar</th>
+          <th>chlorides</th>
+          <th>free sulfur dioxide</th>
+          <th>total sulfur dioxide </th>
+          <th>density</th>
+          <th>pH</th>
+          <th>sulphates</th>
+          <th>alcohol</th>
+          <th>quality</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let objeto of miObjeto">
+          <td>{{ objeto["fixed acidity"] }}</td>
+          <td>{{ objeto["volatile acidity"] }}</td>
+           <td>{{ objeto["citric acid"] }}</td>
+           <td>{{ objeto["residual sugar"] }}</td>
+
+          <td>{{ objeto.chlorides }}</td>
+          <td>{{ objeto["free sulfur dioxide"] }}</td>
+          <td>{{ objeto["total sulfur dioxide"] }}</td>
+          <td>{{ objeto.density }}</td>
+          <td>{{ objeto.pH }}</td>
+          <td>{{ objeto.sulphates }}</td>
+          <td>{{ objeto.alcohol }}</td>
+          <td>{{ objeto.quality }}</td>
+       
+          
+        </tr>
+      </tbody>
+    </table>
+ 
+  </body>
+  <footer class="text-center text-black ">
+    <!-- Grid container -->
+   
+  
+    <!-- Copyright -->
+    <div class="text-center p-3">
+      © 2023 Copyright:
+      <a class="text-black" href="">Luis Rodriguez , Ronaldo Sara y Aldemar Morales</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+</html>

@@ -1,0 +1,12 @@
+.grafico {
+  margin-bottom: 2rem;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
