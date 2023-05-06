@@ -26,7 +26,7 @@ export class AdminComponent implements OnInit {
       password: this.password
     };
 
-    this.http.post('http://127.0.0.1:5000/login', credentials).subscribe(
+    this.http.post('https://mineriaml.onrender.com/login', credentials).subscribe(
       async (response: any) => {
         if (response.success) {
           localStorage.setItem('token', response.token);

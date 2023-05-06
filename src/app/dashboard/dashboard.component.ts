@@ -22,10 +22,10 @@ export class DashboardComponent implements OnInit {
   chart: any;
 
   ngOnInit() {
-    this.http.get('http://127.0.0.1:5000/alcohol').subscribe((data: any) => {
+    this.http.get('https://mineriaml.onrender.com/alcohol').subscribe((data: any) => {
       const alcohol = parseInt(data.alcohol);
       console.log(alcohol);
-      this.http.get('http://127.0.0.1:5000/quality').subscribe((data: any) => {
+      this.http.get('https://mineriaml.onrender.com/quality').subscribe((data: any) => {
         const quality = data.quality;
         console.log( quality);
 
