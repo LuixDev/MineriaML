@@ -36,7 +36,7 @@ export class GestionComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.http.get<MiObjeto[]>('http://127.0.0.1:5000/consultar').subscribe(
+    this.http.get<MiObjeto[]>('https://mineriaml.onrender.com/consultar').subscribe(
       (data) => {
         this.miObjeto = data;
         console.log(data);
@@ -64,7 +64,7 @@ export class GestionComponent implements OnInit {
     };
 
     
-    this.http.post('http://127.0.0.1:5000/predecir', credentials).subscribe(
+    this.http.post('https://mineriaml.onrender.com/predecir', credentials).subscribe(
       (response: any) => {
         
         alert(JSON.stringify(response)); 
