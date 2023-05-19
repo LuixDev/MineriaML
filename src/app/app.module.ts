@@ -13,6 +13,8 @@ import { NgChartsModule } from 'ng2-charts';
 
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Dasboard1Component } from './dasboard1/dasboard1.component';
+
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DashboardComponent,
     AdminComponent,
     GestionComponent,
-    ReporteComponent
+    ReporteComponent,
+    Dasboard1Component,
+
   ],
   imports: [
     BrowserModule,

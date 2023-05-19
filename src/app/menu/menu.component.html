@@ -10,9 +10,16 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="dashboard">Dashboard</a>
-          </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+            Dashboard
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="dashboard">Data Red Wine</a></li>
+            <li><a class="dropdown-item" href="dashboard1">Data titanic</a></li>
+            
+          </ul>
+        </li>
           <li class="nav-item">
             <a class="nav-link" href="admin">Admin</a>
           </li>
@@ -23,6 +30,8 @@
       </div>
     </div>
   </nav>
+
+  
   <div class="space">
 
     <div class="card">
@@ -89,18 +98,18 @@
 <div class="arre">
 <div class="container">
   <h2>Contact us</h2>
-  
+  <form (ngSubmit)="enviar()">
     <label for="name">Nombre:</label>
-    <input type="text" id="name" name="name" required>
+    <input type="text"  [(ngModel)]="name" id="name" name="name" required>
 
     <label for="email">Correo electrónico:</label>
-    <input type="email" id="email" name="email" required>
+    <input  [(ngModel)]="email"  type="email" id="email" name="email" required>
 
     <label for="message">Mensaje:</label>
-    <textarea id="message" name="message" required></textarea>
+    <textarea [(ngModel)]="message" id="message" name="message" required></textarea>
 
     <input type="submit" value="Enviar">
- 
+  </form>
 </div>
 </div>
 

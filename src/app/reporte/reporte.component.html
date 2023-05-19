@@ -19,8 +19,15 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="dashboard">Dashboard</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                  Dashboard
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="dashboard">Data Red Wine</a></li>
+                  <li><a class="dropdown-item" href="dashboard1">Data titanic</a></li>
+                  
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="admin">Admin</a>
@@ -33,6 +40,7 @@
         </div>
       </nav>
       <main>
+        <div class="move">
 		<section>
 			<h2>
         Wine Quality Red Data Set</h2>
@@ -44,7 +52,17 @@ These datasets can be viewed as classification or regression tasks. The classes 
 
 </p>
 		</section>
+  </div>
+  <div class="divider"></div>
+  <div class="move">
+		<section>
+			<h2>
+        Titanic - Machine Learning from Disaster</h2>
+			<p>The test set should be used to see how well your model performs on unseen data. For the test set, we do not provide the ground truth for each passenger. It is your job to predict these outcomes. For each passenger in the test set, use the model you trained to predict whether or not they survived the sinking of the Titanic.
 
+</p>
+		</section>
+  </div>
 	
 	</main>
       <div class="button-container">
@@ -54,7 +72,11 @@ These datasets can be viewed as classification or regression tasks. The classes 
         </a>
       
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="https://hwmnvyokrosmtzdghdaq.supabase.co/storage/v1/object/public/reporte/Reporte.docx">Descargar</a></li>
+          <li><a class="dropdown-item" href="https://hwmnvyokrosmtzdghdaq.supabase.co/storage/v1/object/public/reporte/Reporte.docx">Descargar Red Wine </a></li>
+        
+        </ul>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="https://hwmnvyokrosmtzdghdaq.supabase.co/storage/v1/object/public/reporte/Reporte.docx">Descargar Titanic</a></li>
         
         </ul>
       </div>

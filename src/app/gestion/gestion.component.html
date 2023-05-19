@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
+
+
     <meta charset="UTF-8">
     
     <title>Visualización de Datos</title>
-  
-  </head>
-  <body>
+
     
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -36,24 +33,41 @@
   
 </nav>
 
-<div class="container text-center">
-  <form (ngSubmit)="predecir()">
-  <div class="form-group ">
-  <div class="form-group row">
-    <label for="Id" class="col-md-3 col-form-label text-md-right">Bosque aleatorio</label>
-    <div class="col-md-9">
-      <input type="text" class="form-control"  [(ngModel)]="mensaje" id="mensaje" name="mensaje"placeholder="Digite los datos..." />
+<div class="move">
+  <div class="container">
+    <h1>Entrenamiento y predicción</h1>
+    
+      <div class="form-group">
+        <label for="csv-file">Seleccionar archivo CSV o Excel:</label>
+        <input type="file" id="csv-file"  (change)="onFileSelected($event)" accept=".csv, application/vnd.ms-excel" required>
+        <input type="text" [(ngModel)]="text1"  class="form-control" placeholder="Digite el nombre de la columna csv de estar limitada con ; para que funcione" aria-label="Recipient's username" aria-describedby="button-addon2">
+      </div>
+      <div class="form-group">
+        <button (click)="uploadFile()">Subir archivo</button>
+      </div>
+    
+    <div id="prediction-results"></div>
+  </div>
+
+<h1>Notificacion</h1>
+<div *ngFor="let contacto of contactos; let i = index" class="notification">
+  <div class="card">
+    <div class="card-header">
+      <h5 class="card-title">{{ contacto.name }}</h5>
     </div>
-
+    <div class="card-body">
+      <p class="card-text">Mensaje: {{ contacto.message }}</p>
+      <p class="card-text">Email: {{ contacto.email }}</p>
+    </div>
+    <div class="card-footer">
+      <input type="text" class="form-control" placeholder="Responder mensaje" [(ngModel)]="responder[i]" />
+      <button (click)="deleteNotification(contacto.id, i, contacto.email)">Enviar</button>
+    </div>
   </div>
-  </div>
-
-
-<button type="submit" class="btn btn-primary mx-auto mt-3 ml-5">Predeccir</button>
-  </form>
-
 </div>
-    <h1>Visualización de Datos</h1>
+
+
+    <h1>Visualización de Datos Wine red</h1>
     <h3>winequality-red </h3>
     
     <table>
@@ -95,7 +109,8 @@
       </tbody>
     </table>
  
-  </body>
+ 
+  
   <footer class="text-center text-black ">
     <!-- Grid container -->
    
@@ -107,4 +122,3 @@
     </div>
     <!-- Copyright -->
   </footer>
-</html>
