@@ -18,20 +18,25 @@ export class Dasboard1Component implements OnInit {
 
   
   
-  title = 'Cantidad de alcohol en vino rojo';
+  title = 'Dato de sobrevivencia';
   chart: any;
 
   ngOnInit() {
-    this.http.get('https://mineriaml.onrender.com/alcohol').subscribe((data: any) => {
-      const alcohol = parseInt(data.alcohol);
-      console.log(alcohol);
-      this.http.get('https://mineriaml.onrender.com/quality').subscribe((data: any) => {
-        const quality = data.quality;
-        console.log( quality);
+    this.http.get('https://mineriaml.onrender.com/survived').subscribe((data: any) => {
+      
+      console.log(data);
+      this.http.get('https://mineriaml.onrender.com/age').subscribe((data1: any) => {
+       
+        this.http.get('https://mineriaml.onrender.com/psa').subscribe((data2: any) => {
+        
+        console.log(data2);
 
-        // Datos para la gráfica
-        const chartLabels = ['Alcohol', 'Calidad'];
-        const chartData = [alcohol, quality];
+
+        
+        const chartLabels = ['Sobrevivio', 'Edad', 'Total_pasajero'];
+ 
+   
+        const chartData = [data,data1,data2];
 
         // Crear la instancia de la gráfica
         this.chart = new Chart('canvas', {
@@ -40,7 +45,7 @@ export class Dasboard1Component implements OnInit {
             labels: chartLabels,
             datasets: [
               {
-                label: 'Alcohol, Calidad',
+                label: 'Sobrevivio, Edad ,Total_pasajero',
                 data: chartData, 
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
@@ -56,7 +61,7 @@ export class Dasboard1Component implements OnInit {
             labels: chartLabels,
             datasets: [
               {
-                label: 'Vino rojo',
+                label: 'Sobrevivio, Edad ,Total_pasajero',
                 data: chartData, 
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
@@ -72,7 +77,7 @@ export class Dasboard1Component implements OnInit {
             labels: chartLabels,
             datasets: [
               {
-                label: 'Vino rojo',
+                label: 'Sobrevivio, Edad ,Total_pasajero',
                 data: chartData, 
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
@@ -88,7 +93,7 @@ export class Dasboard1Component implements OnInit {
             labels: chartLabels,
             datasets: [
               {
-                label: 'Vino rojo',
+                label: 'Sobrevivio, Edad ,Total_pasajero',
                 data: chartData, 
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
@@ -104,7 +109,7 @@ export class Dasboard1Component implements OnInit {
             labels: chartLabels,
             datasets: [
               {
-                label: 'Vino rojo',
+                label: 'Sobrevivio, Edad ,Total_pasajero',
                 data: chartData, 
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
@@ -120,7 +125,7 @@ export class Dasboard1Component implements OnInit {
             labels: chartLabels,
             datasets: [
               {
-                label: 'Vino rojo',
+                label: 'VSobrevivio, Edad ,Total_pasajero',
                 data: chartData, 
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
@@ -132,7 +137,7 @@ export class Dasboard1Component implements OnInit {
 
 
       });
-      
+    });
     });
      
    
@@ -142,10 +147,12 @@ export class Dasboard1Component implements OnInit {
     scales: {
       yAxes: [{
         ticks: {
-          beginAtZero: true
+          beginAtZero: true,
+          autoSkip: false // Evita saltar las etiquetas en el eje X
         }
       }]
     }
   }
-  
+ 
+
 }

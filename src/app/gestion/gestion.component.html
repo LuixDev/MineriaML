@@ -16,11 +16,19 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="dashboard">Dashboard</a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link" href="admin">Admin</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+            Dashboard
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="dashboard">Data Red Wine</a></li>
+            <li><a class="dropdown-item" href="dashboard1">Data titanic</a></li>
+            
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="reporte">Reporte</a>
@@ -40,7 +48,7 @@
       <div class="form-group">
         <label for="csv-file">Seleccionar archivo CSV o Excel:</label>
         <input type="file" id="csv-file"  (change)="onFileSelected($event)" accept=".csv, application/vnd.ms-excel" required>
-        <input type="text" [(ngModel)]="text1"  class="form-control" placeholder="Digite el nombre de la columna csv de estar limitada con ; para que funcione" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input type="text" [(ngModel)]="text1"  class="form-control" placeholder="Digite el nombre de la columna csv de estar separado con ; para que funcione" aria-label="Recipient's username" aria-describedby="button-addon2">
       </div>
       <div class="form-group">
         <button (click)="uploadFile()">Subir archivo</button>

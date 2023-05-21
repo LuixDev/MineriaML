@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
       message: this.message
     };
 
-    this.http.post('http://127.0.0.1:5000/enviar', credentials).subscribe(
+    this.http.post('https://mineriaml.onrender.com/enviar', credentials).subscribe(
       async (response: any) => {
           localStorage.setItem('token', response.token);
           alert("se ha enviado el mensaje");

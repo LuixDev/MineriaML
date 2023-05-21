@@ -44,7 +44,7 @@ export class GestionComponent  {
     }
 
   ngOnInit(): void {
-    this.http.get<MiObjeto[]>('http://127.0.0.1:5000/consultar').subscribe(
+    this.http.get<MiObjeto[]>('https://mineriaml.onrender.com/consultar').subscribe(
       (data) => {
         this.miObjeto = data;
         console.log(data);
@@ -59,7 +59,7 @@ export class GestionComponent  {
     );
 
     
-      this.http.get<any[]>('http://127.0.0.1:5000/getn').subscribe(
+      this.http.get<any[]>('https://mineriaml.onrender.com/getn').subscribe(
         (data) => {
           this.contactos = data;
           console.error(data);
@@ -72,13 +72,13 @@ export class GestionComponent  {
   }
   responder: string[] = [];
   deleteNotification(id: number,index: number, email: string): void {
-    const url = `http://127.0.0.1:5000/eliminar`;
+    const url = `https://mineriaml.onrender.com/eliminar`;
     const body = { id: id, responder: this.responder[index], email: email };
 
     this.http.post(url, body).subscribe(
       (data) => {
         alert(data);
-        this.router.navigate(['/gestion']);
+        
       },
     
     );
@@ -95,7 +95,7 @@ export class GestionComponent  {
       formData.append('file', this.selectedFile, this.selectedFile.name);
       formData.append('text1', this.text1); 
   
-      this.http.post('http://127.0.0.1:5000/predecir', formData)
+      this.http.post('https://mineriaml.onrender.com/predecir', formData)
         .subscribe(response => {
           alert("Tu resultado puede ver tambien en consola inpeccion web")
           alert(JSON.stringify(response)); // Recibe la respuesta del servidor
